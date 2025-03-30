@@ -1,0 +1,13 @@
+<html>
+    <head>
+	<title>Journal view</title>
+	<link href='E:\WORKSPACE\Projects\js\katori-client\css\index.css' rel='stylesheet' />
+    </head>
+
+    <body>
+	<span>Create new</span>
+	<br>
+	<span>Journals</span>
+    </body>
+    <script src='E:\WORKSPACE\Projects\js\katori-client\js\index.js' defer></script>
+</html>

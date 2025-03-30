@@ -1,0 +1,43 @@
+body{
+    background-color:121212;
+    color:lightgrey;
+}
+/*journal page content*/
+#journal-view{
+    display:flex;
+    flex-direction:column;
+    gap:140px;
+}
+/*title*/
+.heading span{
+    font-size:120px;
+    color:34D058;
+}
+
+.journal-table-body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+/*table*/
+#journal{
+    overflow:hidden;
+    border-collapse:seperate;
+    border-collapse:collapse;
+    border:3px solid #444;
+    border-radius:10px;
+}
+
+#journal th{
+    font-size:30px;
+    color:#ff5733;
+    background-color:333333;
+    padding:10px;
+}
+
+#journal td{
+    font-size:18px;
+    text-align:center;
+    padding:10px;
+    background-color:3d3d3d;
+}

@@ -1,0 +1,10 @@
+body{
+    background-color:121212;
+    color:lightgrey;
+}
+
+span{
+    font-size:120px;
+    /*color:3A96DD; blue */
+    /*color:0078D4; blue */
+}
