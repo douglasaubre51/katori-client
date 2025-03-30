@@ -22,6 +22,15 @@
 			<th>Amount Dr</th>
 			<th>Amount Cr</th>
 		    </tr>
+		    
+		    <tr>
+			<td>Journal Id</td>
+			<td>Date</td>
+			<td>Particular</td>
+			<td>LF</td>
+			<td>Amount Dr</td>
+			<td>Amount Cr</td>
+		    </tr>
 		</table>
 	    </div>
 	</div>
