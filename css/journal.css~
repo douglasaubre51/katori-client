@@ -6,7 +6,7 @@ body{
 #journal-view{
     display:flex;
     flex-direction:column;
-    gap:140px;
+    gap:2rem;
 }
 /*title*/
 .heading span{
@@ -16,6 +16,25 @@ body{
 
 #heading-tag{
     color:ff5733;
+}
+/*add journal btn*/
+#submit-btn{
+    width:fit-content;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+
+    font-family:cursive;
+    color:ff5733;
+    background-color:333333;
+    font-size:20px;
+    transition-duration:.5s;
+}
+
+#submit-btn:hover{
+    transition-duration:.5s;
+    color:333333;
+    background-color:ff5733;
 }
 
 .journal-table-body{
@@ -59,16 +78,18 @@ body{
 /*debit box*/
 #debit{
     position:absolute;
-    top:20%;
+    top:10%;
     left:50%;
     transform:translate(-50%,-50%);
+    max-width:90%;
 }
-
+/*credit box*/
 #credit{
     position:absolute;
-    top:80%;
+    top:65%;
     left:50%;
     transform:translate(-50%,-50%);
+    max-width:90%;
 }
 
 /*cell flex container*/
@@ -80,14 +101,14 @@ body{
 /*debit*/
 .debit-container{
     position:absolute;
-    top:20%;
+    top:10%;
     left:50%;
     transform:translate(-50%,-50%);
 }
 /*credit*/
 .credit-container{
     position:absolute;
-    top:80%;
+    top:63%;
     left:50%;
     transform:translate(-50%,-50%);
 }

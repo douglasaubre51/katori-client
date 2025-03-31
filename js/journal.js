@@ -1,6 +1,40 @@
 console.log('js is working!')
 
-fetch("http://localhost:5014/api/journal/getJournals")
+const getJournalsURL="http://localhost:5014/api/journal/getJournals";
+const setJournalURL="http://localhost:5014/api/journal/setJournal";
+
+let submitBtn=document.getElementById('submit-btn')
+submitBtn.addEventListener('click',function(){
+    console.log('clicked me!')
+
+    let date=document.getElementById('date').value
+    let particular1=document.getElementById('particular1').value
+    let particular2=document.getElementById('particular2').value
+    let comment=document.getElementById('comment').value
+    let debit=document.getElementById('debit').value
+    let credit=document.getElementById('credit').value
+
+    fetch(setJournalURL,{
+	method:'POST',
+
+	headers:{
+	    'Content-Type':'application/json'
+	},
+
+	body:{
+	    "particular1":particular1,
+	    "particular2":particular2,
+	    "comment":comment,
+	    "debit":debit,
+	    "credit":credit,
+	    "date":date
+	}
+    })
+
+})
+
+
+fetch(getJournalsURL)
     .then(response=>response.json())
     .then(data=>{
 	//display fetch data
@@ -63,6 +97,11 @@ fetch("http://localhost:5014/api/journal/getJournals")
 	    let particular2=document.createElement('span')
 	    particular2.innerHTML=d.particular2
 	    container.append(particular2)
+
+	    //comment
+	    let comment=document.createElement('span')
+	    comment.innerHTML='comment: '+d.comment
+	    container.append(comment)
 
 	    cell.append(container)
 	    table.append(cell)
