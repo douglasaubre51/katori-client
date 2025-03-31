@@ -14,6 +14,8 @@ submitBtn.addEventListener('click',function(){
     let debit=document.getElementById('debit').value
     let credit=document.getElementById('credit').value
 
+    console.log(date,particular1,particular2,comment,debit,credit)
+
     fetch(setJournalURL,{
 	method:'POST',
 
@@ -21,14 +23,14 @@ submitBtn.addEventListener('click',function(){
 	    'Content-Type':'application/json'
 	},
 
-	body:{
+	body:JSON.stringify({
 	    "particular1":particular1,
 	    "particular2":particular2,
 	    "comment":comment,
 	    "debit":debit,
 	    "credit":credit,
 	    "date":date
-	}
+	})
     })
 
 })
