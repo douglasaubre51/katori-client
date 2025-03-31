@@ -12,101 +12,70 @@ fetch("http://localhost:5014/api/journal/getJournals")
 	    let row=document.createElement('tr')
 	    table.append(row)
 
-	    //journal id
-	    //create new cell
+	    //create new cells for each prop
+	    //id
 	    let cell=document.createElement('td')
 	    //alternative row background-color changes
 	    cell.style.backgroundColor = index % 2 == 0 ? '606060' : '4d4d4d'
-	    //create new div
-	    let container=document.createElement('div')
-	    container.setAttribute('class','cell-container')
-	    //create new span element
-	    let span=document.createElement('span')
-	    span.innerHTML=d.journalId
-	    //now add
-	    container.append(span)
-	    cell.append(container)
+	    cell.innerHTML=d.journalId
+	    //add cell to table
 	    table.append(cell)
 
 	    //date
 	    cell=document.createElement('td')
 	    cell.style.backgroundColor = index % 2 == 0 ? '606060' : '4d4d4d'
 
-	    container=document.createElement('div')
-	    container.setAttribute('class','cell-container')
-
-	    span=document.createElement('span')
-	    span.innerHTML=d.date
-
-	    container.append(span)
-	    cell.append(container)
+	    //create new span element so we can add flex to it
+	    let element=document.createElement('span')
+	    element.innerHTML=d.date
+	    //add span to cell
+	    cell.append(element)
+	    //add cell to table
 	    table.append(cell)
 
 	    //paticulars
 	    cell=document.createElement('td')
+	    cell.setAttribute('class','particular-parent')
 	    cell.style.backgroundColor = index % 2 == 0 ? '606060' : '4d4d4d'
 
-	    container=document.createElement('div')
-	    container.setAttribute('class','cell-container')
-
+	    //create span element for using flexbox style on
 	    //particular 1
 	    let particular1=document.createElement('span')
 	    particular1.innerHTML=d.particular1
-	    container.append(particular1)
+	    cell.append(particular1)
 
-	    //word 'to'
 	    let to=document.createElement('span')
 	    to.innerHTML='to'
-	    container.append(to)
+	    cell.append(to)
 
 	    //particular 2
 	    let particular2=document.createElement('span')
 	    particular2.innerHTML=d.particular2
-	    container.append(particular2)
+	    cell.append(particular2)
 
-	    cell.append(container)
+	    //finally add cell to table
 	    table.append(cell)
 
 	    //LF
 	    cell=document.createElement('td')
 	    cell.style.backgroundColor = index % 2 == 0 ? '606060' : '4d4d4d'
+	    element=document.createElement('span')
+	    element.innerHTML=d.journalId
 
-	    container=document.createElement('div')
-	    container.setAttribute('class','cell-container')
-
-	    span=document.createElement('span')
-	    span.innerHTML=d.journalId
-
-	    container.append(span)
-	    cell.append(container)
+	    //add span to cell
+	    cell.append(element)
 	    table.append(cell)
 
 	    //debit
 	    cell=document.createElement('td')
 	    cell.style.backgroundColor = index % 2 == 0 ? '606060' : '4d4d4d'
-
-	    container=document.createElement('div')
-	    container.setAttribute('class','debit-container')
-
-	    span=document.createElement('span')
-	    span.innerHTML=d.debit
-
-	    container.append(span)
-	    cell.append(container)
+	    cell.innerHTML=d.debit
 	    table.append(cell)
 
 	    //credit
 	    cell=document.createElement('td')
 	    cell.style.backgroundColor = index % 2 == 0 ? '606060' : '4d4d4d'
-
-	    container=document.createElement('div')
-	    container.setAttribute('class','credit-container')
-
-	    span=document.createElement('span')
-	    span.innerHTML=d.credit
-
-	    container.append(span)
-	    cell.append(container)
+	    cell.innerHTML=d.credit
 	    table.append(cell)
 	})
     })
