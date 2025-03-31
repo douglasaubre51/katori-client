@@ -41,11 +41,21 @@ body{
 
 #journal td{
     font-size:18px;
-    padding:10px;
     background-color:606060;
     vertical-align:middle;
     text-align:center;
     position:relative;
+}
+/*first row*/
+.particular-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+.particular-container input[type='text']{
+
 }
 /*cell flex container*/
 .cell-container{
