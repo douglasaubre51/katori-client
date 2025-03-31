@@ -54,9 +54,23 @@ body{
     gap:10px;
 }
 
-.particular-container input[type='text']{
+.particular-container input[type='text']{}
 
+/*debit box*/
+#debit{
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform:translate(-50%,-50%);
 }
+
+#credit{
+    position:absolute;
+    top:80%;
+    bottom:50%;
+    transform:translate(-50%,-50%);
+}
+
 /*cell flex container*/
 .cell-container{
     display:flex; 
