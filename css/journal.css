@@ -2,6 +2,7 @@ body{
     background-color:121212;
     color:lightgrey;
 }
+
 /*journal page content*/
 #journal-view{
     display:flex;
@@ -59,8 +60,10 @@ body{
 }
 
 #journal td{
+    font-family:Roboto;
     font-size:18px;
     background-color:606060;
+
     vertical-align:middle;
     text-align:center;
     position:relative;
@@ -72,8 +75,32 @@ body{
     align-items:center;
     gap:10px;
 }
+/*text boxes*/
+input[type='text'],input[type='number']{
+    background-color:inherit;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    border-bottom:333333;
+    color:lightgrey;
+    font-size:15px;
+}
 
-.particular-container input[type='text']{}
+input[type='text'],input[type='number']:focus{
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    border-bottom:333333;
+    outline:none;
+}
+/*date box*/
+input[type='date']{
+    background-color:333333;
+    padding:5px;
+    border:none;
+    border-radius:3px;
+    color:lightgrey;
+}
 
 /*debit box*/
 #debit{
