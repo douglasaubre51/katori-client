@@ -1,3 +1,7 @@
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background-color:121212;
     color:lightgrey;
@@ -19,7 +23,8 @@ body{
     color:ff5733;
 }
 /*add journal btn*/
-#submit-btn{
+/*scroll up btn*/
+#submit-btn,#scroll-up{
     width:fit-content;
     border:none;
     border-radius:5px;
@@ -32,7 +37,7 @@ body{
     transition-duration:.5s;
 }
 
-#submit-btn:hover{
+#submit-btn,#scroll-up:hover{
     transition-duration:.5s;
     color:333333;
     background-color:ff5733;

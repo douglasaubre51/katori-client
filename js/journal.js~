@@ -1,5 +1,13 @@
 console.log('js is working!')
 
+//scroll window to the top
+let scrollBtn=document.getElementById('scroll-up')
+scrollBtn.addEventListener('click',()=>{
+    window.scrollTo({
+	top:300
+    })
+})
+
 let date;
 let particular1;
 let particular2;

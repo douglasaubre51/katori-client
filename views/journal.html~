@@ -51,6 +51,8 @@
 			</td>
 		</table>
 	    </div>
+
+	    <button id='scroll-up'>go to top</button>
 	</div>
     </body>
     <script src='E:\WORKSPACE\Projects\js\katori-client\js\journal.js' defer></script>
