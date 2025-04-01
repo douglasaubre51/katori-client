@@ -2,6 +2,7 @@
     <head>
 	<title>Journal view</title>
 	<link href='E:\WORKSPACE\Projects\js\katori-client\css\journal.css' rel='stylesheet' />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -13,6 +14,7 @@
 	    </div>
 
 	    <button id='submit-btn'>add journal</button>
+	    <span id='validation-message'></span>
 
 	    <div class='journal-table-body'>
 		<table id='journal' border=1 >

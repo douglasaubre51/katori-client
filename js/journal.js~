@@ -1,41 +1,76 @@
 console.log('js is working!')
 
+let date;
+let particular1;
+let particular2;
+let comment;
+let debit;
+let credit;
+
+//validate fields
+function isValid(){
+    let flag=(particular1!='' && particular2!='' && comment!='' && debit!='' && credit!='' && isDateValid()===false) 
+    console.log(flag)
+
+    //validation message here!
+    span=document.getElementById('validation-message')
+
+    if(flag==false){
+	span.style.color='red'
+	span.innerHTML='please enter all fields!'
+    }
+    else{
+	span.style.color='green'
+	span.innerHTML='added new record!'
+    }
+
+    return flag
+}
+
+//validate date box
+function isDateValid(){
+    return isNaN(new Date(date)) 
+}
+
+//to post data to katori web-api
 const getJournalsURL="http://localhost:5014/api/journal/getJournals";
 const setJournalURL="http://localhost:5014/api/journal/setJournal";
 
 let submitBtn=document.getElementById('submit-btn')
+
 submitBtn.addEventListener('click',function(){
     console.log('clicked me!')
 
-    let date=document.getElementById('date').value
-    let particular1=document.getElementById('particular1').value
-    let particular2=document.getElementById('particular2').value
-    let comment=document.getElementById('comment').value
-    let debit=document.getElementById('debit').value
-    let credit=document.getElementById('credit').value
+    date=document.getElementById('date').value
+    particular1=document.getElementById('particular1').value
+    particular2=document.getElementById('particular2').value
+    comment=document.getElementById('comment').value
+    debit=document.getElementById('debit').value
+    credit=document.getElementById('credit').value
 
-    console.log(date,particular1,particular2,comment,debit,credit)
+    if(isValid()==true){
+	console.log(date,particular1,particular2,comment,debit,credit)
 
-    fetch(setJournalURL,{
-	method:'POST',
+	fetch(setJournalURL,{
+	    method:'POST',
 
-	headers:{
-	    'Content-Type':'application/json'
-	},
+	    headers:{
+		'Content-Type':'application/json'
+	    },
 
-	body:JSON.stringify({
-	    "particular1":particular1,
-	    "particular2":particular2,
-	    "comment":comment,
-	    "debit":debit,
-	    "credit":credit,
-	    "date":date
+	    body:JSON.stringify({
+		"particular1":particular1,
+		"particular2":particular2,
+		"comment":comment,
+		"debit":debit,
+		"credit":credit,
+		"date":date
+	    })
 	})
-    })
-
+    }
 })
 
-
+//to get data from katori web-api
 fetch(getJournalsURL)
     .then(response=>response.json())
     .then(data=>{
