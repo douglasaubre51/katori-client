@@ -7,6 +7,14 @@
 
     <body>
 	<div id='journal-view'>
+	    <ul id='nav-bar'>
+		<li>
+		    <a href="E:\WORKSPACE\Projects\js\katori-client\views\ledger.html">
+			Ledger
+		    </a>
+		</li>
+	    </ul>
+
 	    <div class='heading'>
 		<span>create new</span>
 		<br>

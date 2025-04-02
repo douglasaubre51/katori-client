@@ -7,6 +7,22 @@ body{
     color:lightgrey;
 }
 
+ul{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+
+a{
+    text-decoration:none;
+    color:lightgrey;
+}
+
+#nav-bar{
+    float:left;
+    display:block;
+}
+
 /*journal page content*/
 #journal-view{
     display:flex;

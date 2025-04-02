@@ -29,7 +29,7 @@ function isValid(){
     }
     else{
 	span.style.color='green'
-	span.innerHTML='added new record!'
+	span.innerHTML='added new record!<br>press <F5> to see new record!'
     }
 
     return flag

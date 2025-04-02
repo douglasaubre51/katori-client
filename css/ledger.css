@@ -9,22 +9,10 @@ body{
 
 ul{
     list-style-type:none;
-    padding:0;
-    margin:0;
-}
-
-a{
-    text-decoration:none;
-    color:lightgrey;
-}
-
-#nav-bar{
-    float:left;
-    display:block;
 }
 
 /*journal page content*/
-#journal-view{
+#ledger-view{
     display:flex;
     flex-direction:column;
     gap:2rem;
@@ -89,13 +77,6 @@ a{
     text-align:center;
     position:relative;
 }
-/*first row*/
-.particular-container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-}
 /*text boxes*/
 input[type='text'],input[type='number']{
     background-color:inherit;
@@ -121,42 +102,4 @@ input[type='date']{
     border:none;
     border-radius:3px;
     color:lightgrey;
-}
-
-/*debit box*/
-#debit{
-    position:absolute;
-    top:10%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    max-width:90%;
-}
-/*credit box*/
-#credit{
-    position:absolute;
-    top:65%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    max-width:90%;
-}
-
-/*cell flex container*/
-.cell-container{
-    display:flex; 
-    flex-direction:column;
-    gap:10px;
-}
-/*debit*/
-.debit-container{
-    position:absolute;
-    top:10%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
-/*credit*/
-.credit-container{
-    position:absolute;
-    top:63%;
-    left:50%;
-    transform:translate(-50%,-50%);
 }
