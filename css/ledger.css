@@ -1,0 +1,105 @@
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background-color:121212;
+    color:lightgrey;
+}
+
+ul{
+    list-style-type:none;
+}
+
+/*journal page content*/
+#ledger-view{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+}
+/*title*/
+.heading span{
+    font-size:120px;
+    color:34D058;
+}
+
+#heading-tag{
+    color:ff5733;
+}
+/*add journal btn*/
+/*scroll up btn*/
+#submit-btn,#scroll-up{
+    width:fit-content;
+    border:none;
+    border-radius:5px;
+    padding:10px;
+
+    font-family:cursive;
+    color:ff5733;
+    background-color:333333;
+    font-size:20px;
+    transition-duration:.5s;
+}
+
+#submit-btn,#scroll-up:hover{
+    transition-duration:.5s;
+    color:333333;
+    background-color:ff5733;
+}
+
+.journal-table-body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+/*table*/
+#journal{
+    overflow:hidden;
+    border-collapse:seperate;
+    border-collapse:collapse;
+    border:3px solid #444;
+    border-radius:10px;
+}
+
+#journal th{
+    font-size:30px;
+    color:#ff5733;
+    background-color:333333;
+    padding:10px;
+}
+
+#journal td{
+    font-family:Roboto;
+    font-size:18px;
+    background-color:606060;
+
+    vertical-align:middle;
+    text-align:center;
+    position:relative;
+}
+/*text boxes*/
+input[type='text'],input[type='number']{
+    background-color:inherit;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    border-bottom:333333;
+    color:lightgrey;
+    font-size:15px;
+}
+
+input[type='text'],input[type='number']:focus{
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    border-bottom:333333;
+    outline:none;
+}
+/*date box*/
+input[type='date']{
+    background-color:333333;
+    padding:5px;
+    border:none;
+    border-radius:3px;
+    color:lightgrey;
+}
