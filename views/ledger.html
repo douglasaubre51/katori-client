@@ -6,7 +6,9 @@
     </head>
 
     <body>
+	<!-- ledger area -->
 	<div id='ledger-view'>
+	    <!-- nav bar area -->
 	    <ul id='nav-bar'>
 		<li>
 		    <a class='nav-btn' href="E:\WORKSPACE\Projects\js\katori-client\views\journal.html">
@@ -15,26 +17,38 @@
 		</li>
 	    </ul>
 
+	    <!-- heading area -->
 	    <div class='heading'>
 		<span>create new</span>
 		<br>
 		<span id='heading-tag'>Ledger</span>
 	    </div>
 
+	    <!-- ledger flexbox -->
 	    <div class='ledger-flex-container'>
+		<!-- lhs -->
 		<div class='create-ledger-container'>
 		    <h2>Title</h2>
 		    <input type='text' id='title' />
 
+		    <h2>Ledger Type</h2>
+		    <input type='text' id='ledger-type' />
+
 		    <div class='btn-group'>
-			<button id='create-btn' >create</button>
+			<button id='create-btn' onclick='createLedger()'>create</button>
 			<button id='clear-btn' onclick='clearFields()' >clear</button>
 		    </div>
 		</div>
 
+		<!-- rhs -->
+		<div id='title-widget-container'></div>
 	    </div>
+
+	    <!-- create ledger validation message -->
+	    <span id='validation-message' ><span>
 	</div>
     </body>
 
     <script src='E:\WORKSPACE\Projects\js\katori-client\js\ledger.js' defer></script>
+    <script src='E:\WORKSPACE\Projects\js\katori-client\js\fetch-ledger.js' defer></script>
 </html>

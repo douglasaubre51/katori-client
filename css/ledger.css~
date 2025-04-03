@@ -30,13 +30,14 @@ a{
     padding:15px 10px;
 }
 
-/*journal page content*/
+/*ledger page content*/
 #ledger-view{
     display:flex;
     flex-direction:column;
     gap:2rem;
 }
-/*title*/
+
+/*titles*/
 .heading span{
     font-size:120px;
     color:34D058;
@@ -48,6 +49,27 @@ a{
 
 /* ledger flex box */
 .ledger-flex-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+/* ledger titles widget */
+#title-widget-container{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+}
+
+#title-widget-container span{
+    padding:10px;
+    max-height:fit-content;
+    border-radius:5px;
+
+    background-color:#9932cc;
 }
 
 /* create ledger group */
@@ -55,8 +77,8 @@ a{
     display:flex;
     flex-direction:column;
     gap:30px;
-    max-width:30%;
-    position:relative;
+    min-width:30%;
+    max-width:35%;
 }
 
 .create-ledger-container h2{
@@ -72,7 +94,7 @@ a{
     justify-content:space-between;
 }
 
-/*add ledger btn*/
+/*create ledger btn*/
 /*scroll up btn*/
 #create-btn,#scroll-up{
     width:fit-content;
@@ -126,6 +148,7 @@ input[type='text'],input[type='number']:focus{
     border-bottom:333333;
     outline:none;
 }
+
 /*date box*/
 input[type='date']{
     background-color:333333;
