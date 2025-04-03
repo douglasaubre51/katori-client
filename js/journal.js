@@ -36,6 +36,16 @@ function isDateValid(){
     return isNaN(new Date(date)) 
 }
 
+//clear all fields
+function clearFields(){
+    document.getElementById('date').value=''
+    document.getElementById('particular1').value=''
+    document.getElementById('particular2').value=''
+    document.getElementById('comment').value=''
+    document.getElementById('debit').value=''
+    document.getElementById('credit').value=''
+}
+
 //to post data to katori web-api
 const getJournalsURL="https://localhost:8000/api/journal/getJournals";
 const setJournalURL="https://localhost:8000/api/journal/setJournal";

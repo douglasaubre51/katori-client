@@ -14,13 +14,25 @@
 		    </a>
 		</li>
 	    </ul>
-	    
+
 	    <div class='heading'>
 		<span>create new</span>
 		<br>
 		<span id='heading-tag'>Ledger</span>
 	    </div>
 
+	    <div class='ledger-flex-container'>
+		<div class='create-ledger-container'>
+		    <h2>Title</h2>
+		    <input type='text' id='title' />
+
+		    <div class='btn-group'>
+			<button id='create-btn' >create</button>
+			<button id='clear-btn' >clear</button>
+		    </div>
+		</div>
+
+	    </div>
 	</div>
     </body>
 

@@ -15,7 +15,7 @@ ul{
 
 a{
     text-decoration:none;
-    color:#00fa9a;
+    color:whitesmoke;
     font-weight:bold;
 }
 
@@ -46,9 +46,9 @@ a{
 #heading-tag{
     color:ff5733;
 }
-/*add journal btn*/
+/*create btn*/
 /*scroll up btn*/
-#submit-btn,#scroll-up{
+#submit-btn,#clear-btn,#scroll-up{
     width:fit-content;
     border:none;
     border-radius:5px;
@@ -59,9 +59,10 @@ a{
     background-color:333333;
     font-size:20px;
     transition-duration:.5s;
+    cursor:pointer;
 }
 
-#submit-btn,#scroll-up:hover{
+#submit-btn:hover,#clear-btn:hover,#scroll-up:hover{
     transition-duration:.5s;
     color:333333;
     background-color:ff5733;
