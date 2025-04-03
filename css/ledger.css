@@ -9,6 +9,25 @@ body{
 
 ul{
     list-style-type:none;
+    padding:0;
+    margin:0;
+}
+
+{
+    text-decoration:none;
+    color:whitesmoke;
+}
+
+#nav-bar{
+    float:left;
+    display:block;
+    font-size:20px;
+}
+
+.nav-btn{
+    background-color:#ff5733;
+    border-radius:5px;
+    padding:15px 10px;
 }
 
 /*journal page content*/
@@ -24,8 +43,9 @@ ul{
 }
 
 #heading-tag{
-    color:ff5733;
+    color:#9932cc;
 }
+
 /*add journal btn*/
 /*scroll up btn*/
 #submit-btn,#scroll-up{

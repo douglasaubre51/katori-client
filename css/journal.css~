@@ -15,12 +15,20 @@ ul{
 
 a{
     text-decoration:none;
-    color:lightgrey;
+    color:#00fa9a;
+    font-weight:bold;
 }
 
 #nav-bar{
     float:left;
     display:block;
+    font-size:20px;
+}
+
+.nav-btn{
+    background-color:#9932cc;
+    border-radius:5px;
+    padding:15px 10px;
 }
 
 /*journal page content*/

@@ -4,7 +4,7 @@ console.log('js is working!')
 let scrollBtn=document.getElementById('scroll-up')
 scrollBtn.addEventListener('click',()=>{
     window.scrollTo({
-	top:300
+	top:400
     })
 })
 
@@ -27,10 +27,6 @@ function isValid(){
 	span.style.color='red'
 	span.innerHTML='please enter all fields!'
     }
-    else{
-	span.style.color='green'
-	span.innerHTML='added new record!<br>press <F5> to see new record!'
-    }
 
     return flag
 }
@@ -41,8 +37,8 @@ function isDateValid(){
 }
 
 //to post data to katori web-api
-const getJournalsURL="http://localhost:5014/api/journal/getJournals";
-const setJournalURL="http://localhost:5014/api/journal/setJournal";
+const getJournalsURL="https://localhost:8000/api/journal/getJournals";
+const setJournalURL="https://localhost:8000/api/journal/setJournal";
 
 let submitBtn=document.getElementById('submit-btn')
 
@@ -59,6 +55,7 @@ submitBtn.addEventListener('click',function(){
     if(isValid()==true){
 	console.log(date,particular1,particular2,comment,debit,credit)
 
+	//add new journal to JOURNALS
 	fetch(setJournalURL,{
 	    method:'POST',
 
@@ -74,6 +71,20 @@ submitBtn.addEventListener('click',function(){
 		"credit":credit,
 		"date":date
 	    })
+	}).then(response=>{
+	    //handle bad request response
+	    if(response.status==400){
+		console.log('bad request!')
+		let span=document.getElementById('validation-message')
+		span.style.color='red'
+		span.innerHTML='given ledgers doesnot exists!'
+	    }
+	    else if(response.status==201){
+		console.log('journal created!')
+		let span=document.getElementById('validation-message')
+		span.style.color='green'
+		span.innerHTML='added new journal record!<br>refresh the page to see changes!'
+	    }
 	})
     }
 })
