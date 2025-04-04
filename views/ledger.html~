@@ -24,7 +24,6 @@
 		<span id='heading-tag'>Ledger</span>
 	    </div>
 
-
 	    <!-- ledger flexbox -->
 	    <div class='ledger-flex-container'>
 		<!-- lhs -->
@@ -33,7 +32,10 @@
 		    <input type='text' id='title' />
 
 		    <h2>Ledger Type</h2>
-		    <input type='text' id='ledger-type' />
+		    <select id='ledger-type'>
+			<option value='Debit'>Debit</option>
+			<option value='Credit'>Credit</option>
+		    </select>
 
 		    <div class='btn-group'>
 			<button id='create-btn' onclick='createLedger()'>create</button>

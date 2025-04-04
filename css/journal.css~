@@ -46,6 +46,12 @@ a{
 #heading-tag{
     color:ff5733;
 }
+
+.btn-group{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
 /*create btn*/
 /*scroll up btn*/
 #submit-btn,#clear-btn,#scroll-up{
