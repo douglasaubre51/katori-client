@@ -56,20 +56,26 @@ a{
 
 /* ledger titles widget */
 #title-widget-container{
-    display:flex;
-    flex-direction:row;
+    display:grid;
+    grid-template-columns:auto auto auto auto;
     align-items:center;
-    justify-content:center;
-    gap:10px;
+    justify-items:center;
+
+
     width:100%;
+    overflow:auto;
+    padding:40px;
 }
 
 #title-widget-container span{
-    padding:10px;
-    max-height:fit-content;
-    border-radius:5px;
+    text-align:center;
 
     background-color:#9932cc;
+    border-radius:5px;
+    padding:7px 7px;
+
+    width:80%;
+    height:fit-content;
 }
 
 /* create ledger group */
@@ -160,11 +166,7 @@ select{
 
 select:focus{
     border:none;
-}
-
-select:hover{
-    background-color:lightgrey;
-    color:#9932cc;
+    outline:none;
 }
 
 /*date box*/
