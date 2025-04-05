@@ -1,9 +1,13 @@
 *.swp
 *.un~
+*.js~
+*.html~
+*.css~
+*.un
 
 # Ignore Vim swap files
-[._]*.s[a-v][a-z]
-[._]*.sw[a-p]
+*.s[a-v][a-z]
+*.sw[a-p]
 
 # Ignore Vim session files
 Session.vim
@@ -16,4 +20,4 @@ Session.vim
 tags
 
 # Ignore persistent undo files
-[._]*.un~
+*.un~
