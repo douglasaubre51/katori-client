@@ -2,11 +2,12 @@ console.log('fetch ledger running!')
 
 const getLedgerTitlesURL='https://localhost:8000/api/ledger/getledgertitles'
 const setLedgerURL='https://localhost:8000/api/ledger/setledger'
+
 const titleWidgetContainer=document.getElementById('title-widget-container')
 
 const validationMessage=document.getElementById('validation-message')
 
-// get all title's of all ledgers
+// get title's of all ledgers
 fetch(getLedgerTitlesURL)
     .then(response=>response.json())
     .then(data=>{
@@ -59,8 +60,9 @@ function createLedger(){
 //validate fields
 function validateFields(title,ledgerType){
     if(title=='' || ledgerType==''){
+
 	validationMessage.style.color='red'
-	validationMessage.innerHTML='enter all fields!'
+	validationMessage.textContent='enter all fields!'
 
 	return false
     }
