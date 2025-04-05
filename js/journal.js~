@@ -4,7 +4,7 @@ console.log('js is working!')
 let scrollBtn=document.getElementById('scroll-up')
 scrollBtn.addEventListener('click',()=>{
     window.scrollTo({
-	top:400
+	top:350
     })
 })
 
@@ -34,6 +34,16 @@ function isValid(){
 //validate date box
 function isDateValid(){
     return isNaN(new Date(date)) 
+}
+
+//clear all fields
+function clearFields(){
+    document.getElementById('date').value=''
+    document.getElementById('particular1').value=''
+    document.getElementById('particular2').value=''
+    document.getElementById('comment').value=''
+    document.getElementById('debit').value=''
+    document.getElementById('credit').value=''
 }
 
 //to post data to katori web-api

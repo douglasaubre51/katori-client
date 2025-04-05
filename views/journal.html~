@@ -21,7 +21,10 @@
 		<span id='heading-tag'>Journals</span>
 	    </div>
 
-	    <button id='submit-btn'>add journal</button>
+	    <div class='btn-group'>
+		<button id='submit-btn'>create</button>
+		<button id='clear-btn' onclick="clearFields()" >clear</button>
+	    </div>
 	    <span id='validation-message'></span>
 
 	    <div class='journal-table-body'>
