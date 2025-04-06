@@ -1,0 +1,48 @@
+<html>
+    <head>
+	<title>Trial Balance view</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link href='../css/trial-balance/index.css' rel='stylesheet' />
+    </head>
+
+    <body>
+	<!-- trial-balance area -->
+	<div id='trial-balance-view'>
+	    <!-- nav bar area -->
+	    <ul id='nav-bar'>
+		<li>
+		    <a class='nav-btn-1' href="E:\WORKSPACE\Projects\js\katori-client\views\journal.html">
+			Journal
+		    </a>
+		</li>
+		<li>
+		    <a class='nav-btn-2' href="E:\WORKSPACE\Projects\js\katori-client\views\ledger.html">
+			Ledger
+		    </a>
+		</li>
+	    </ul>
+
+	    <div class='heading'>
+		<span>check new</span>
+		<br>
+		<span id='heading-tag'>trial balance</span>
+	    </div>
+
+	    <!-- ledger titles widget container -->
+	    <div id='title-widget-container'></div>
+
+	    <!-- ledger container -->
+	    <div id='ledger-container'>
+		<!-- ledger balance display container -->
+		<div id='ledger-balance-container'></div>
+
+		<!-- selected ledger table -->
+		<div id='selected-ledger-table-container'></div>
+	    </div>
+
+	</div>
+    </body>
+
+    <script src='../js/trial-balance/ui.js' defer></script>
+    <script src='../js/trial-balance/fetch.js' defer></script>
+</html>
