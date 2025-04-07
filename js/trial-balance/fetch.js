@@ -2,18 +2,22 @@ console.log("starting fetch!");
 
 const getLedgerTitleURL = "https://localhost:8000/api/ledger/getLedgerTitles";
 
+const getLedgerByTitleURL="https://localhost:8000/api/ledger/getLedgerByTitle";
+
 const getParticularsOfLedgerURL =
   "https://localhost:8000/api/particular/getParticularsOfLedger";
 
 const widgetContainer = document.getElementById("title-widget-container");
+const trialBalanceGroup=document.getElementById('trial-balance-group')
 const selectedLedgerTableContainer = document.getElementById(
-  "selected-ledger-table-container",
+  "selected-ledger-table-container"
 );
 
 //create ledger table in the shadows
 function createLedgerTable() {
   let table = document.createElement("table");
   table.setAttribute("id", "dr-ledger-table");
+  table.setAttribute("border",1);
   selectedLedgerTableContainer.append(table);
 
   let headerRow = document.createElement("tr");
@@ -32,6 +36,7 @@ function createLedgerTable() {
 
   table = document.createElement("table");
   table.setAttribute("id", "cr-ledger-table");
+  table.setAttribute("border",1);
   selectedLedgerTableContainer.append(table);
 
   headerRow = document.createElement("tr");
@@ -48,8 +53,37 @@ function createLedgerTable() {
   headingArray[1].textContent = "Title";
   headingArray[2].textContent = "cr";
 }
+// get selected ledger details
+function getLedgerByTitle(url){
+  fetch(url)
+  .then(res=>res.json())
+  .then(data=>{
+    console.log(data.TotalDebit)
+    console.log(data.TotalCredit)
 
-//get selected ledger
+    let balanceGroup=document.createElement('div')
+    balanceGroup.setAttribute('id','balance-group')
+    trialBalanceGroup.append(balanceGroup)
+
+    let head1=document.createElement('span')
+    head1.innerHTML='Total Debit'+'<br>'
+    balanceGroup.append(head1)
+
+    let debit=document.createElement('span')
+    debit.textContent=data.TotalDebit
+    balanceGroup.append(debit)
+
+    let head2=document.createElement('span')
+    head2.innerHTML='Total Credit'+'<br>'
+    balanceGroup.append(head2)
+
+    let credit=document.createElement('span')
+    credit.textContent=data.TotalCredit
+    balanceGroup.append(credit)
+  })
+}
+
+//get selected ledgers dr and cr sides
 function getParticularsOfLedger(url) {
   fetch(url)
     .then((response) => response.json())
@@ -100,20 +134,26 @@ function domUpdate(data) {
   data.forEach((e) => {
     let title = document.createElement("span");
     title.innerHTML = e;
-
     widgetContainer.append(title);
 
     title.addEventListener("click", function () {
-      //add code to execute on click event
+      // add code to execute on click event
       // to clear existing tables
-      document.getElementById("dr-ledger-table")?.remove();
+      document.getElementById("balance-group")?.remove();
       document.getElementById("cr-ledger-table")?.remove();
+      document.getElementById("dr-ledger-table")?.remove();
 
       createLedgerTable();
 
-      let params = { ledgerName: e };
+      let params = { title: e };
       let payload = new URLSearchParams(params).toString();
-      let url = `${getParticularsOfLedgerURL}?${payload}`;
+      let url = `${getLedgerByTitleURL}?${payload}`;
+
+      getLedgerByTitle(url);
+
+      params = { ledgerName: e };
+      payload = new URLSearchParams(params).toString();
+      url = `${getParticularsOfLedgerURL}?${payload}`;
 
       getParticularsOfLedger(url);
     });
