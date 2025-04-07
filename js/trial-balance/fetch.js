@@ -2,7 +2,7 @@ console.log('starting fetch!')
 
 const getLedgerTitleURL='https://localhost:8000/api/ledger/getLedgerTitles'
 
-const getLedgerByTitleURL='https://localhost:8000/api/ledger/getLedgerByTitle'
+const getLedgerByTitleURL='https://localhost:8000/api/particular/getParticularsOfLedger'
 
 const widgetContainer=document.getElementById('title-widget-container')
 const selectedLedgerTableContainer=document.getElementById('selected-ledger-table-container')
@@ -37,36 +37,38 @@ function createLedgerTable(){
 function getLedgerByTitle(url){
     fetch(url)
 	.then(response=>response.json())
-	.then(e=>{
+	.then(data=>{
 	    const table=document.getElementById('ledger-table')
 	    let row=document.createElement('tr')
 	    table.append(row)
 
-	    if(e.LedgerType
+	    // debit side
+	    data.DebitParticulars.forEach((d)=>{
+		let cell=document.createElement('td')
 
-	    let idCell1=document.createElement('td')
-	    idCell1.textContent=e.Id
+		if(d===0)
+		    cell.textContent='debit'
+		else
+		    cell.textContent=d
 
-	    let titleCell1=document.createElement('td')
-	    titleCell1.textContent=e.Title
+		console.log(d.Date)
 
-	    let ledgerType1Cell=document.createElement('td')
-	    ledgerType1Cell.textContent=e.LedgerType
+		row.append(cell)
+	    })
 
-	    let debitCell=document.createElement('td')
-	    debitCell.textContent=0
+	    // credit side
+	    data.DebitParticulars.forEach((c)=>{
+		let cell=document.createElement('td')
 
-	    let idCell2=document.createElement('td')
-	    idCell2.textContent=e.Id
+		if(d===1)
+		    cell.textContent='credit'
+		else
+		    cell.textContent=c
 
-	    let titleCell2=document.createElement('td')
-	    titleCell2.textContent=e.Id
 
-	    let ledgerTypeCell2=document.createElement('td')
-	    ledgerTypeCell2.textContent=e.Id
+		row.append(cell)
+	    })
 
-	    let creditCell=document.createElement('td')
-	    creditCell.textContent=e.Id
 	})
 }
 
@@ -83,7 +85,7 @@ function domUpdate(data){
 	    document.getElementById('ledger-table')?.remove()
 	    createLedgerTable()
 
-	    let params={ title:e }
+	    let params={ ledgerName:e }
 	    let payload=new URLSearchParams(params).toString()
 	    let url=`${getLedgerByTitleURL}?${payload}`
 	    getLedgerByTitle(url)
