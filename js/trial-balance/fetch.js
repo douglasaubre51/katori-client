@@ -2,103 +2,129 @@ console.log('starting fetch!')
 
 const getLedgerTitleURL='https://localhost:8000/api/ledger/getLedgerTitles'
 
-const getLedgerByTitleURL='https://localhost:8000/api/ledger/getLedgerByTitle'
+const getParticularsOfLedgerURL='https://localhost:8000/api/particular/getParticularsOfLedger'
 
 const widgetContainer=document.getElementById('title-widget-container')
 const selectedLedgerTableContainer=document.getElementById('selected-ledger-table-container')
 
 //create ledger table in the shadows
 function createLedgerTable(){
-    let table=document.createElement('table')
-    table.setAttribute('id','ledger-table')
-    selectedLedgerTableContainer.append(table)
+	let table=document.createElement('table')
+	table.setAttribute('id','dr-ledger-table')
+	selectedLedgerTableContainer.append(table)
 
-    let headerRow=document.createElement('tr')
-    table.append(headerRow)
+	let headerRow=document.createElement('tr')
+	table.append(headerRow)
 
-    let headingArray=new Array(8)
+	let headingArray=new Array(3)
 
-    for(let i=0;i<8;i++){
-	headingArray[i]=document.createElement('th')
-	headerRow.append(headingArray[i])
-    }
+	for(let i=0;i<3;i++){
+		headingArray[i]=document.createElement('th')
+		headerRow.append(headingArray[i])
+	}
 
-    headingArray[0].textContent='Id'
-    headingArray[1].textContent='Title'
-    headingArray[2].textContent='Ledger Type'
-    headingArray[3].textContent='Dr'
-    headingArray[4].textContent='Id'
-    headingArray[5].textContent='Title'
-    headingArray[6].textContent='Ledger Type'
-    headingArray[7].textContent='Cr'
+	headingArray[0].textContent='Id'
+	headingArray[1].textContent='Title'
+	headingArray[2].textContent='Dr'
+
+	table=document.createElement('table')
+	table.setAttribute('id','cr-ledger-table')
+	selectedLedgerTableContainer.append(table)
+
+	headerRow=document.createElement('tr')
+	table.append(headerRow)
+
+	headingArray=new Array(3)
+
+	for(let i=0;i<3;i++){
+		headingArray[i]=document.createElement('th')
+		headerRow.append(headingArray[i])
+	}
+
+	headingArray[0].textContent='Id'
+	headingArray[1].textContent='Title'
+	headingArray[2].textContent='cr'
 }
 
 //get selected ledger
-function getLedgerByTitle(url){
-    fetch(url)
-	.then(response=>response.json())
-	.then(e=>{
-	    const table=document.getElementById('ledger-table')
-	    let row=document.createElement('tr')
-	    table.append(row)
+function getParticularsOfLedger(url){
+	fetch(url)
+		.then(response=>response.json())
+		.then(data=>{
+			const drTable=document.getElementById('dr-ledger-table')
+			const crTable=document.getElementById('cr-ledger-table')
 
-	    if(e.LedgerType
+			//dr
+			data.DebitParticulars.forEach((e)=>{
+				let row=document.createElement('tr')
+				drTable.append(row)
 
-	    let idCell1=document.createElement('td')
-	    idCell1.textContent=e.Id
+				let ParticularId=document.createElement('td')
+				ParticularId.innerHTML=e.ParticularId
+				row.append(ParticularId)
 
-	    let titleCell1=document.createElement('td')
-	    titleCell1.textContent=e.Title
+				let Title=document.createElement('td')
+				Title.innerHTML=e.Title
+				row.append(Title)
 
-	    let ledgerType1Cell=document.createElement('td')
-	    ledgerType1Cell.textContent=e.LedgerType
+				let Amount=document.createElement('td')
+				Amount.innerHTML=e.Amount
+				row.append(Amount)
+			})
 
-	    let debitCell=document.createElement('td')
-	    debitCell.textContent=0
+			//cr
+			data.CreditParticulars.forEach((e)=>{
+				let row=document.createElement('tr')
+				crTable.append(row)
 
-	    let idCell2=document.createElement('td')
-	    idCell2.textContent=e.Id
+				let ParticularId=document.createElement('td')
+				ParticularId.innerHTML=e.ParticularId
+				row.append(ParticularId)
 
-	    let titleCell2=document.createElement('td')
-	    titleCell2.textContent=e.Id
+				let Title=document.createElement('td')
+				Title.innerHTML=e.Title
+				row.append(Title)
 
-	    let ledgerTypeCell2=document.createElement('td')
-	    ledgerTypeCell2.textContent=e.Id
-
-	    let creditCell=document.createElement('td')
-	    creditCell.textContent=e.Id
-	})
+				let Amount=document.createElement('td')
+				Amount.innerHTML=e.Amount
+				row.append(Amount)
+			})
+		})
 }
 
 //update dom from the shadows
 function domUpdate(data){
-    data.forEach((e)=>{
-	let title=document.createElement('span')
-	title.innerHTML=e
+	data.forEach((e)=>{
+		let title=document.createElement('span')
+		title.innerHTML=e
 
-	widgetContainer.append(title)
+		widgetContainer.append(title)
 
-	title.addEventListener('click',function(){
-	    //add code to execute on click event
-	    document.getElementById('ledger-table')?.remove()
-	    createLedgerTable()
+		title.addEventListener('click',function(){
+			//add code to execute on click event
+			// to clear existing tables
+			document.getElementById('dr-ledger-table')?.remove()
+			document.getElementById('cr-ledger-table')?.remove()
 
-	    let params={ title:e }
-	    let payload=new URLSearchParams(params).toString()
-	    let url=`${getLedgerByTitleURL}?${payload}`
-	    getLedgerByTitle(url)
+			createLedgerTable()
+
+			let params={ ledgerName:e }
+			let payload=new URLSearchParams(params).toString()
+			let url=`${getParticularsOfLedgerURL}?${payload}`
+
+			getParticularsOfLedger(url)
+		})
 	})
-    })
 }
 
 //update cycle starts here!
 //to get content for title widget container
 function getLedgerTitles(){
-    fetch(getLedgerTitleURL)
-	.then(response=>response.json())
-	.then(data=>{
-	    domUpdate(data)
-	})
+	fetch(getLedgerTitleURL)
+		.then(response=>response.json())
+		.then(data=>{
+			domUpdate(data)
+		})
 }
 
 //for full page refresh
