@@ -122,7 +122,7 @@ fetch(getJournalsURL)
 	    container.setAttribute('class','cell-container')
 	    //create new span element
 	    let span=document.createElement('span')
-	    span.innerHTML=d.journalId
+	    span.innerHTML=d.JournalId
 	    //now add
 	    container.append(span)
 	    cell.append(container)
@@ -136,7 +136,7 @@ fetch(getJournalsURL)
 	    container.setAttribute('class','cell-container')
 
 	    span=document.createElement('span')
-	    span.innerHTML=d.date
+	    span.innerHTML=d.Date
 
 	    container.append(span)
 	    cell.append(container)
@@ -151,7 +151,7 @@ fetch(getJournalsURL)
 
 	    //particular 1
 	    let particular1=document.createElement('span')
-	    particular1.innerHTML=d.particular1
+	    particular1.innerHTML=d.Particular1
 	    container.append(particular1)
 
 	    //word 'to'
@@ -161,12 +161,12 @@ fetch(getJournalsURL)
 
 	    //particular 2
 	    let particular2=document.createElement('span')
-	    particular2.innerHTML=d.particular2
+	    particular2.innerHTML=d.Particular2
 	    container.append(particular2)
 
 	    //comment
 	    let comment=document.createElement('span')
-	    comment.innerHTML='comment: '+d.comment
+	    comment.innerHTML='comment: '+d.Comment
 	    container.append(comment)
 
 	    cell.append(container)
@@ -180,7 +180,7 @@ fetch(getJournalsURL)
 	    container.setAttribute('class','cell-container')
 
 	    span=document.createElement('span')
-	    span.innerHTML=d.journalId
+	    span.innerHTML=d.JournalId
 
 	    container.append(span)
 	    cell.append(container)
@@ -194,7 +194,7 @@ fetch(getJournalsURL)
 	    container.setAttribute('class','debit-container')
 
 	    span=document.createElement('span')
-	    span.innerHTML=d.debit
+	    span.innerHTML=d.Debit
 
 	    container.append(span)
 	    cell.append(container)
@@ -208,7 +208,7 @@ fetch(getJournalsURL)
 	    container.setAttribute('class','credit-container')
 
 	    span=document.createElement('span')
-	    span.innerHTML=d.credit
+	    span.innerHTML=d.Credit
 
 	    container.append(span)
 	    cell.append(container)
