@@ -72,6 +72,7 @@ function getLedgerByTitle(url) {
       balanceGroup.append(head1);
 
       let debit = document.createElement("span");
+      debit.setAttribute('id','debit-tag')
       debit.textContent = data.TotalDebit;
       balanceGroup.append(debit);
 
@@ -80,6 +81,7 @@ function getLedgerByTitle(url) {
       balanceGroup.append(head2);
 
       let credit = document.createElement("span");
+      credit.setAttribute('id','credit-tag')
       credit.textContent = data.TotalCredit;
       balanceGroup.append(credit);
     });
@@ -95,39 +97,43 @@ function getParticularsOfLedger(url) {
 
       //dr
       data.DebitParticulars.forEach((e) => {
-        let row = document.createElement("tr");
-        drTable.append(row);
+	let row = document.createElement("tr");
+	drTable.append(row);
 
-        let ParticularId = document.createElement("td");
-        ParticularId.innerHTML = e.ParticularId;
-        row.append(ParticularId);
+	let ParticularId = document.createElement("td");
+	ParticularId.innerHTML = e.ParticularId;
+	row.append(ParticularId);
 
-        let Title = document.createElement("td");
-        Title.innerHTML = e.Title;
-        row.append(Title);
+	let Title = document.createElement("td");
+	Title.innerHTML = e.Title;
+	row.append(Title);
 
-        let Amount = document.createElement("td");
-        Amount.innerHTML = e.Amount;
-        row.append(Amount);
+	let Amount = document.createElement("td");
+	Amount.innerHTML = e.Amount;
+	row.append(Amount);
       });
 
       //cr
       data.CreditParticulars.forEach((e) => {
-        let row = document.createElement("tr");
-        crTable.append(row);
+	let row = document.createElement("tr");
+	crTable.append(row);
 
-        let ParticularId = document.createElement("td");
-        ParticularId.innerHTML = e.ParticularId;
-        row.append(ParticularId);
+	let ParticularId = document.createElement("td");
+	ParticularId.innerHTML = e.ParticularId;
+	row.append(ParticularId);
 
-        let Title = document.createElement("td");
-        Title.innerHTML = e.Title;
-        row.append(Title);
+	let Title = document.createElement("td");
+	Title.innerHTML = e.Title;
+	row.append(Title);
 
-        let Amount = document.createElement("td");
-        Amount.innerHTML = e.Amount;
-        row.append(Amount);
+	let Amount = document.createElement("td");
+	Amount.innerHTML = e.Amount;
+	row.append(Amount);
       });
+
+      document.getElementById('trial-balance-group').scrollIntoView({
+	block:"start"
+      })
     });
 }
 
@@ -158,6 +164,7 @@ function domUpdate(data) {
       url = `${getParticularsOfLedgerURL}?${payload}`;
 
       getParticularsOfLedger(url);
+
     });
   });
 }

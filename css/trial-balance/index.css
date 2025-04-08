@@ -1,5 +1,5 @@
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body {
@@ -102,7 +102,6 @@ a {
 #trial-balance-group{
   display:flex;
   flex-direction:row;
-  align-items:center;
   justify-content:space-evenly;
 }
 
@@ -110,9 +109,21 @@ a {
 #balance-group{
   display:flex;
   flex-direction:column;
-  align-items:center;
-  justify-items:center;
-  gap:10px;
+  justify-content:center;
+  gap:20px;
+
+  font-size:50px;
+
+  overflow:hidden;
+}
+#debit-tag,
+#credit-tag
+{
+  background-color:#001f3f;
+  color:#d7263d;
+  padding:10px;
+  border-radius:10px;
+  width:fit-content;
 }
 
 /* selected ledger table container */
@@ -121,6 +132,7 @@ a {
   flex-direction:row;
   gap:30px;
 }
+
 /* design particular tables */
 #selected-ledger-table-container table{
   height:fit-content;
@@ -133,7 +145,6 @@ a {
   text-align:center;
   color:#d7263d;
 }
-
 #selected-ledger-table-container th{
   background-color:#001f3f;
 
