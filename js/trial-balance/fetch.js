@@ -84,6 +84,16 @@ function getLedgerByTitle(url) {
       credit.setAttribute('id','credit-tag')
       credit.textContent = data.TotalCredit;
       balanceGroup.append(credit);
+
+      let head3=document.createElement('span')
+      head3.innerHTML='<br>'+'Trial Balance'
+      balanceGroup.append(head3)
+
+      let trialBalance = document.createElement("span");
+      trialBalance.setAttribute('id','trial-balance-tag')
+      trialBalance.textContent = data.TotalCredit-data.TotalDebit;
+      balanceGroup.append(trialBalance);
+
     });
 }
 

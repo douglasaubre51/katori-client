@@ -1,70 +1,84 @@
 <html>
-    <head>
-	<title>Journal view</title>
-	<link href='E:\WORKSPACE\Projects\js\katori-client\css\journal.css' rel='stylesheet' />
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    </head>
+  <head>
+    <title>Journal view</title>
+    <link
+      href="E:\WORKSPACE\Projects\js\katori-client\css\journal.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <body>
-	<div id='journal-view'>
-	    <ul id='nav-bar'>
-		<li>
-		    <a class='nav-btn' href="E:\WORKSPACE\Projects\js\katori-client\views\ledger.html">
-			Ledger
-		    </a>
-		</li>
-	    </ul>
+  <body>
+    <div id="journal-view">
+      <ul id="nav-bar">
+        <li>
+          <a
+            class="nav-btn-1"
+            href="E:\WORKSPACE\Projects\js\katori-client\views\ledger.html"
+          >
+            Ledger
+          </a>
+          <a class="nav-btn-2" href="trial-balance.html"> Trial Balance </a>
+        </li>
+      </ul>
 
-	    <div class='heading'>
-		<span>create new</span>
-		<br>
-		<span id='heading-tag'>Journals</span>
-	    </div>
+      <div class="heading">
+        <span>create new</span>
+        <br />
+        <span id="heading-tag">Journals</span>
+      </div>
 
-	    <div class='btn-group'>
-		<button id='submit-btn'>create</button>
-		<button id='clear-btn' onclick="clearFields()" >clear</button>
-	    </div>
-	    <span id='validation-message'></span>
+      <div class="btn-group">
+        <button id="submit-btn">create</button>
+        <button id="clear-btn" onclick="clearFields()">clear</button>
+      </div>
+      <span id="validation-message"></span>
 
-	    <div class='journal-table-body'>
-		<table id='journal' border=1 >
-		    <tr>
-			<th>Id</th>
-			<th>Date</th>
-			<th>Particular</th>
-			<th>LF</th>
-			<th>Amount Dr</th>
-			<th>Amount Cr</th>
-		    </tr>
+      <div class="journal-table-body">
+        <table id="journal" border="1">
+          <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Particular</th>
+            <th>LF</th>
+            <th>Amount Dr</th>
+            <th>Amount Cr</th>
+          </tr>
 
-		    <tr>
-			<td></td>
-			<td>
-			    <input type='date' id='date' />
-			</td>
+          <tr>
+            <td></td>
+            <td>
+              <input type="date" id="date" />
+            </td>
 
-			<td>
-			    <div class='particular-container'>
-				<input type='text' id='particular1' />to
-				<input type='text' id='particular2' />
-				<input type='text' id='comment' />
-			    </div>
-			</td>
+            <td>
+              <div class="particular-container">
+                <input type="text" id="particular1" />to
+                <input type="text" id="particular2" />
+                <input type="text" id="comment" />
+              </div>
+            </td>
 
-			<td></td>
-			<td>
-			    <input type='number' id='debit' />
-			</td>
+            <td></td>
+            <td>
+              <input type="number" id="debit" />
+            </td>
 
-			<td>
-			    <input type='number' id='credit' />
-			</td>
-		</table>
-	    </div>
+            <td>
+              <input type="number" id="credit" />
+            </td>
+          </tr>
+        </table>
+      </div>
 
-	    <button id='scroll-up'>go to top</button>
-	</div>
-    </body>
-    <script src='E:\WORKSPACE\Projects\js\katori-client\js\journal.js' defer></script>
+      <button id="scroll-up">go to top</button>
+    </div>
+  </body>
+  <script
+    src="E:\WORKSPACE\Projects\js\katori-client\js\journal.js"
+    defer
+  ></script>
 </html>
