@@ -1,190 +1,240 @@
-html{
-    scroll-behavior:smooth;
+html {
+  scroll-behavior:smooth;
 }
 
-body{
-    background-color:#333333;
-    color:lightgrey;
+body {
+  background-color: #333333;
+  color: lightgrey;
 }
 
-ul{
-    list-style-type:none;
-    padding:0;
-    margin:0;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-a{
-    text-decoration:none;
-    color:whitesmoke;
+a {
+  text-decoration: none;
+  color: whitesmoke;
 }
 
-#nav-bar{
-    float:left;
-    display:flex;
-    flex-direction:row;
-    gap:20px;
-    font-size:20px;
+#nav-bar {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 20px;
 }
 
-.nav-btn-1,.nav-btn-2{
-    border-radius:5px;
-    padding:15px 10px;
+.nav-btn-1,
+.nav-btn-2 {
+  border-radius: 5px;
+  padding: 15px 10px;
 }
 
-.nav-btn-1{
-    background-color:#ff5733;
+.nav-btn-1 {
+  background-color: #ff5733;
 }
 
-.nav-btn-2{
-    background-color:#9932cc;
+.nav-btn-2 {
+  background-color: #9932cc;
 }
 
 /*trial-balance page content*/
-#trial-balance-view{
-    display:flex;
-    flex-direction:column;
-    gap:2rem;
+#trial-balance-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /*titles*/
-.heading span{
-    font-size:120px;
-    color:3b82f6;
+.heading span {
+  font-size: 120px;
+  color: 3b82f6;
 }
 
-#heading-tag{
-    color:#d7263d;
+#heading-tag {
+  color: #d7263d;
 }
 
 /* ledger flex box */
-.trial-balance-flex-container{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
+.trial-balance-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* ledger titles widget */
-#title-widget-container{
-    display:grid;
-    grid-template-columns:auto auto auto auto;
-    align-items:center;
-    justify-items:center;
+#title-widget-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  justify-items: center;
 
-    gap:30px;
+  gap: 30px;
 
-    width:100%;
-    overflow:auto;
+  width: 100%;
+  overflow: auto;
 }
 
-#title-widget-container span{
-    text-align:center;
-    color:whitesmoke;
+#title-widget-container span {
+  text-align: center;
+  color: #d7263d;
+  background-color: #001f3f;
 
-    background-color:#d7263d;
-    border-radius:5px;
-    padding:7px 7px;
+  border-radius: 5px;
+  padding: 7px 7px;
 
-    width:60%;
-    min-width:fit-content;
-    height:fit-content;
+  width: 60%;
+  min-width: fit-content;
+  height: fit-content;
+
+  transition-duration: 0.5s;
 }
 
-/* create ledger group */
-.create-ledger-container{
-    display:flex;
-    flex-direction:column;
-    gap:30px;
-    min-width:30%;
-    max-width:35%;
+#title-widget-container span:hover {
+  color: #001f3f;
+  background-color: #d7263d;
+  transition-duration: 0.5s;
 }
 
-.create-ledger-container h2{
-    background-color:9932cc;
-    border-radius:4px;
-    padding:5px 10px;
+/* trial balance section */
+#trial-balance-group{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
 }
 
-/* ledger btn container */
-.btn-group{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
+/* balance group */
+#balance-group{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:20px;
+
+  font-size:50px;
+
+  overflow:hidden;
+}
+#debit-tag,
+#credit-tag
+{
+  background-color:#001f3f;
+  color:#d7263d;
+  padding:10px;
+  border-radius:10px;
+  width:fit-content;
+}
+
+/* selected ledger table container */
+#selected-ledger-table-container{
+  display:flex;
+  flex-direction:row;
+  gap:30px;
+}
+
+/* design particular tables */
+#selected-ledger-table-container table{
+  height:fit-content;
+  overflow:hidden;
+
+  border-collapse:collapse;
+  border:2px solid #334d63;
+  border-radius:10px;
+
+  text-align:center;
+  color:#d7263d;
+}
+#selected-ledger-table-container th{
+  background-color:#001f3f;
+
+  padding:20px;
+}
+#selected-ledger-table-container td{
+  background-color:#4c6380;
+  color:#ec6a78;
+  padding:10px;
 }
 
 /*create ledger btn*/
 /*scroll up btn*/
-#create-btn,#scroll-up{
-    width:fit-content;
-    border:none;
-    border-radius:5px;
-    padding:10px;
+#create-btn,
+#scroll-up {
+  width: fit-content;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
 
-    font-family:cursive;
-    color:9932cc;
-    background-color:333333;
-    font-size:20px;
-    transition-duration:.5s;
-    cursor:pointer;
+  font-family: cursive;
+  color: 9932cc;
+  background-color: 333333;
+  font-size: 20px;
+  transition-duration: 0.5s;
+  cursor: pointer;
 }
 
-#clear-btn{
-    width:fit-content;
-    border:none;
-    border-radius:5px;
-    padding:10px;
+#clear-btn {
+  width: fit-content;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
 
-    font-family:cursive;
-    color:9932cc;
-    background-color:333333;
-    font-size:20px;
-    transition-duration:.5s;
-    cursor:pointer;
+  font-family: cursive;
+  color: 9932cc;
+  background-color: 333333;
+  font-size: 20px;
+  transition-duration: 0.5s;
+  cursor: pointer;
 }
 
-#create-btn:hover,#clear-btn:hover,#scroll-up:hover{
-    transition-duration:.5s;
-    color:333333;
-    background-color:9932cc;
+#create-btn:hover,
+#clear-btn:hover,
+#scroll-up:hover {
+  transition-duration: 0.5s;
+  color: 333333;
+  background-color: 9932cc;
 }
 
 /*text boxes*/
-input[type='text'],input[type='number']{
-    background-color:inherit;
-    border-left:none;
-    border-right:none;
-    border-top:none;
-    border-bottom-color:9932cc;
-    color:lightgrey;
-    font-size:15px;
+input[type="text"],
+input[type="number"] {
+  background-color: inherit;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-color: 9932cc;
+  color: lightgrey;
+  font-size: 15px;
 }
 
-input[type='text']:focus,input[type='number']:focus{
-    border-left:none;
-    border-right:none;
-    border-top:none;
-    border-bottom:333333;
-    outline:none;
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 333333;
+  outline: none;
 }
 
 /* select box */
-select{
-    color:lightgrey;
-    background-color:#9932cc;
-    border-radius:3px;
-    border:none;
-    padding:5px;
+select {
+  color: lightgrey;
+  background-color: #9932cc;
+  border-radius: 3px;
+  border: none;
+  padding: 5px;
 }
 
-select:focus{
-    border:none;
-    outline:none;
+select:focus {
+  border: none;
+  outline: none;
 }
 
 /*date box*/
-input[type='date']{
-    background-color:333333;
-    padding:5px;
-    border:none;
-    border-radius:3px;
-    color:lightgrey;
+input[type="date"] {
+  background-color: 333333;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  color: lightgrey;
 }
