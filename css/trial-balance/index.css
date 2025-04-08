@@ -103,18 +103,46 @@ a {
   display:flex;
   flex-direction:row;
   align-items:center;
-  justify-content:space-between;
+  justify-content:space-evenly;
+}
+
+/* balance group */
+#balance-group{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-items:center;
+  gap:10px;
 }
 
 /* selected ledger table container */
 #selected-ledger-table-container{
   display:flex;
   flex-direction:row;
-  gap:20px;
+  gap:30px;
+}
+/* design particular tables */
+#selected-ledger-table-container table{
+  height:fit-content;
+  overflow:hidden;
+
+  border-collapse:collapse;
+  border:2px solid #334d63;
+  border-radius:10px;
+
+  text-align:center;
+  color:#d7263d;
 }
 
-/* dr particular table */
-#dr-ledger-table{
+#selected-ledger-table-container th{
+  background-color:#001f3f;
+
+  padding:20px;
+}
+#selected-ledger-table-container td{
+  background-color:#4c6380;
+  color:#ec6a78;
+  padding:10px;
 }
 
 /*create ledger btn*/
